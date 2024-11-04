@@ -91,4 +91,5 @@ async def eliminar_sala(sala_id: int):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    port=int(getenv("PORT",8000))
+    uvicorn.run(app.api:app, host="0.0.0.0", port=port, reload=True)
